@@ -11,7 +11,9 @@ namespace Interview.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employees
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,20 +23,38 @@ namespace Interview.Models
             this.Orders = new HashSet<Orders>();
             this.Territories = new HashSet<Territories>();
         }
-    
+        [DisplayName("編號")]
         public int EmployeeID { get; set; }
+        [DisplayName("姓氏")]
+
         public string LastName { get; set; }
+        [DisplayName("名字")]
+
         public string FirstName { get; set; }
+        [DisplayName("職稱")]
+
         public string Title { get; set; }
+        [DisplayName("稱謂")]
+
         public string TitleOfCourtesy { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
         public Nullable<System.DateTime> HireDate { get; set; }
+        [DisplayName("地址")]
+
         public string Address { get; set; }
         public string City { get; set; }
         public string Region { get; set; }
+        [DisplayName("郵遞區號")]
+
         public string PostalCode { get; set; }
+        [DisplayName("國家")]
+
         public string Country { get; set; }
+        [DisplayName("住家電話")]
+
         public string HomePhone { get; set; }
+        [DisplayName("分機號碼")]
+
         public string Extension { get; set; }
         public byte[] Photo { get; set; }
         public string Notes { get; set; }
