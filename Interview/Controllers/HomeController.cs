@@ -24,6 +24,9 @@ namespace Interview.Controllers
             var member = db.Employees.Where(f => f.Account_Number == Account_Number && f.Password == Password).FirstOrDefault();
             if (member != null)
             {
+                Session["Role"] = member.Role;
+                Session["UserName"] = member.FirstName;
+
                 FormsAuthentication.RedirectFromLoginPage
                     (member.Account_Number, true);
                 return RedirectToAction("Index", "Category");
