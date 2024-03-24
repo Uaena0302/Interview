@@ -40,6 +40,10 @@ namespace Interview.Models
         public string Notes { get; set; }
         public Nullable<int> ReportsTo { get; set; }
         public string PhotoPath { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
+        public string Permissions { get; set; }
+        public string Account_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employees> Employees1 { get; set; }
