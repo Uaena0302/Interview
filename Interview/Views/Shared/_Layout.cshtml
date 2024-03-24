@@ -18,28 +18,48 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        @Html.ActionLink("類別管理", "Index", "Category", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("類別新增", "Create", "Category", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("產品管理", "Index", "Product", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("產品新增", "Create", "Product", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("員工管理", "Index", "Member", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("員工新增", "Create", "Member", null, new { @class = "nav-link" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("登出", "Index", "Logout", null, new { @class = "nav-link" })
-                    </li>
+                    @if (Session["Role"] != null && (Session["Role"].ToString() == "admin" || Session["Role"].ToString() == "staff"))
+                    {
+                        <li class="nav-item">
+                            @Html.ActionLink("類別管理", "Index", "Category", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("類別新增", "Create", "Category", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("產品管理", "Index", "Product", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("產品新增", "Create", "Product", null, new { @class = "nav-link" })
+                        </li>
+                    }
+                    @if (Session["Role"] != null && Session["Role"].ToString() == "admin")
+                    {
+                        <li class="nav-item">
+                            @Html.ActionLink("員工管理", "Index", "Member", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("員工新增", "Create", "Member", null, new { @class = "nav-link" })
+                        </li>
+                    }
+                </ul>
+                <ul class="navbar-nav">
+                    @if (Session["UserName"] != null)
+                    {
+                        <li class="nav-item">
+                            <span class="nav-link text-light">登入人員: @Session["UserName"]</span>
+                        </li>
 
+                        <li class="nav-item">
+                            @Html.ActionLink("登出", "Index", "Logout", null, new { @class = "nav-link" })
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            @Html.ActionLink("登入", "Login", "Home", null, new { @class = "nav-link" })
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
