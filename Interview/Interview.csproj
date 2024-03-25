@@ -325,6 +325,8 @@
     <Content Include="Views\Home\View.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Logout\" />

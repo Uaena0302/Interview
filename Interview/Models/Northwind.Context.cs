@@ -30,7 +30,6 @@ namespace Interview.Models
         public virtual DbSet<Categories> Categories { get; set; }
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
         public virtual DbSet<Customers> Customers { get; set; }
-        public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Order_Details> Order_Details { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Products> Products { get; set; }
@@ -53,6 +52,7 @@ namespace Interview.Models
         public virtual DbSet<Sales_Totals_by_Amount> Sales_Totals_by_Amount { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Quarter> Summary_of_Sales_by_Quarter { get; set; }
         public virtual DbSet<Summary_of_Sales_by_Year> Summary_of_Sales_by_Year { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
     
         public virtual ObjectResult<CustOrderHist_Result> CustOrderHist(string customerID)
         {
