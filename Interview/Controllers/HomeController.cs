@@ -18,18 +18,18 @@ namespace Interview.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string Account_Number, string Password)
+        public ActionResult Login(string AccountNumber, string Password)
         {
             NorthwindEntities db = new NorthwindEntities();
-            var member = db.Employees.Where(f => f.Account_Number == Account_Number && f.Password == Password).FirstOrDefault();
+            var member = db.Employees.Where(f => f.AccountNumber == AccountNumber && f.Password == Password).FirstOrDefault();
             if (member != null)
             {
                 Session["Role"] = member.Role;
                 Session["UserName"] = member.FirstName;
 
                 FormsAuthentication.RedirectFromLoginPage
-                    (member.Account_Number, true);
-                return RedirectToAction("Index", "Category");
+                    (member.AccountNumber, true);
+                return RedirectToAction("Index", "Employee");
             }
             ViewBag.IsLogin = true;
 

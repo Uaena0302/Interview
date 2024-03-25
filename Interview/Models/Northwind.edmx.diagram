@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="NorthwindModel.Categories" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.CustomerDemographics" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.Customers" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthwindModel.Employees" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.Order_Details" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.Products" Width="1.5" PointX="5.25" PointY="18.625" IsExpanded="true" />
@@ -33,15 +32,16 @@
         <EntityTypeShape EntityType="NorthwindModel.Summary_of_Sales_by_Year" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="NorthwindModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Orders_Customers" ManuallyRouted="false" />
-        <AssociationConnector Association="NorthwindModel.FK_Employees_Employees" ManuallyRouted="false" />
-        <AssociationConnector Association="NorthwindModel.FK_Orders_Employees" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Orders_Shippers" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Products_Suppliers" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.FK_Territories_Region" ManuallyRouted="false" />
         <AssociationConnector Association="NorthwindModel.CustomerCustomerDemo" ManuallyRouted="false" />
-        <AssociationConnector Association="NorthwindModel.EmployeeTerritories" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NorthwindModel.Employees" Width="1.5" PointX="7.375" PointY="16.125" />
+        <AssociationConnector Association="NorthwindModel.FK_Employees_Employees" />
+        <AssociationConnector Association="NorthwindModel.FK_Orders_Employees" />
+        <AssociationConnector Association="NorthwindModel.EmployeeTerritories" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
