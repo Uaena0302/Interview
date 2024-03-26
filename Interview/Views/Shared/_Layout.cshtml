@@ -21,16 +21,7 @@
                     @if (Session["Role"] != null && (Session["Role"].ToString() == "admin" || Session["Role"].ToString() == "staff"))
                     {
                         <li class="nav-item">
-                            @Html.ActionLink("類別管理", "Index", "Category", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("類別新增", "Create", "Category", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("產品管理", "Index", "Product", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("產品新增", "Create", "Product", null, new { @class = "nav-link" })
+                            @Html.ActionLink("訂單管理", "Index", "Orders", null, new { @class = "nav-link" })
                         </li>
                     }
                     @if (Session["Role"] != null && Session["Role"].ToString() == "admin")
