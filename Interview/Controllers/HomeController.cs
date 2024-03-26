@@ -29,7 +29,7 @@ namespace Interview.Controllers
 
                 FormsAuthentication.RedirectFromLoginPage
                     (member.AccountNumber, true);
-                return RedirectToAction("Index", "Employee");
+                return RedirectToAction("Index", "Orders");
             }
             ViewBag.IsLogin = true;
 
